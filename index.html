@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="morning">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>رُكن الكوكيز — كوكيز تُخبز بحب</title>
+  <meta name="description" content="رُكن الكوكيز: متجر كوكيز حرفي بدفعات صغيرة، مكوّنات صادقة، ولمسة من الدفء في كل قطعة." />
+  <meta name="theme-color" content="#FFF9F0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="رُكن الكوكيز · Cookie Nook" />
+  <meta property="og:title" content="رُكن الكوكيز — كوكيز تُخبز بحب" />
+  <meta property="og:description" content="ستة أنواع من الكوكيز الحرفي، تُخبز طازجة كل صباح. اطلب علبتك واكتشف مزاجك المفضّل." />
+  <meta property="og:locale" content="ar_SA" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Nunito:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>
+    // Reveal-on-scroll only when scripts can actually run.
+    document.documentElement.classList.add('js');
+    // Apply saved language, direction and theme before paint.
+    try {
+      var savedLang = localStorage.getItem('cookienook.lang');
+      if (savedLang === 'en' || savedLang === 'ar') {
+        document.documentElement.lang = savedLang;
+        document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
+      }
+      var savedTheme = localStorage.getItem('cookienook.theme');
+      if (savedTheme === 'morning' || savedTheme === 'evening') {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <!-- ============ Icon sprite ============ -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-cookie" viewBox="0 0 24 24">
+      <path d="M20.7 11.6a9 9 0 1 1-8.3-8.3 3.3 3.3 0 0 0 4.2 4.2 3.3 3.3 0 0 0 4.1 4.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <circle cx="9" cy="9.5" r="1.3" fill="currentColor"/><circle cx="13.6" cy="13.7" r="1.1" fill="currentColor"/><circle cx="8.6" cy="15" r="1.2" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24">
+      <path d="M5.6 8.4h12.8l-1 11.1a2 2 0 0 1-2 1.8H8.6a2 2 0 0 1-2-1.8L5.6 8.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M9 9V6.8A3 3 0 0 1 15 6.8V9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M20.4 14.2A8.8 8.8 0 0 1 9.8 3.6a8.8 8.8 0 1 0 10.6 10.6Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M17.5 3.6l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z" fill="currentColor"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.4S3.4 15 3.4 8.8A4.5 4.5 0 0 1 12 6.5a4.5 4.5 0 0 1 8.6 2.3c0 6.2-8.6 11.6-8.6 11.6Z" fill="currentColor"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.5 7h15M9 7V4.8c0-.6.5-1 1-1h4c.5 0 1 .4 1 1V7M7 7l.8 12c0 1 .8 1.7 1.8 1.7h4.8c1 0 1.8-.7 1.8-1.7L17 7M10 11v6M14 11v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19 10c0 5.2-7 11-7 11S5 15.2 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.2 3.8h3l1.4 3.7-1.8 1.6a12 12 0 0 0 5.1 5.1l1.6-1.8 3.7 1.4v3a2.2 2.2 0 0 1-2.4 2.2C10.4 18.4 5.6 13.6 4 7.2a2.2 2.2 0 0 1 2.2-3.4Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 7.5l7.5 5.5 7.5-5.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5.4l3.4 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M13.8 3.5v10.2a3.7 3.7 0 1 1-3.2-3.7M13.8 4c.5 2.6 2.2 4.4 4.9 4.7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M4.5 4.5l15 15M19.5 4.5l-15 15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M4 20l1.2-3.6A8.2 8.2 0 1 1 8 19.2L4 20Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.3c-.4.7-.1 2 .8 3.4s2.2 2.4 3.2 2.7c.9.2 1.7 0 2-.6.2-.4-.5-1.3-1.1-1.5-.4-.1-.9.2-1.3.1-.5-.2-1.1-.7-1.4-1.2-.2-.4-.1-.8 0-1.2.1-.4-.7-1.1-1.1-1.2-.4-.1-1-.3-1.1-.5Z" fill="currentColor"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2.5c.6 4.9 4.6 8.9 9.5 9.5-4.9.6-8.9 4.6-9.5 9.5-.6-4.9-4.6-8.9-9.5-9.5 4.9-.6 8.9-4.6 9.5-9.5Z" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l5 5 10-11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C4 11 8.5 4.5 20 4c.5 11.5-6 16-15 15Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 19c3-4.5 6.5-7.5 11-9.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="9" width="17" height="4.5" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 13.5h13V19a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-5.5ZM12 9v12" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 8.8S10.7 4 8 4.6c-2.4.6-1.6 4.2 4 4.2Zm0 0s1.3-4.8 4-4.2c2.4.6 1.6 4.2-4 4.2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3.5 6.5h10v10h-10zM13.5 10h4l3 3v3.5h-7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-quote" viewBox="0 0 24 24"><path d="M9.5 6C6.4 7.2 4.5 9.8 4.5 13.3c0 2.7 1.5 4.7 3.8 4.7 2 0 3.4-1.4 3.4-3.4 0-1.9-1.2-3.2-3-3.2-.4 0-.7 0-1 .2.4-1.6 1.6-2.9 3.4-3.8L9.5 6Zm9 0c-3.1 1.2-5 3.8-5 7.3 0 2.7 1.5 4.7 3.8 4.7 2 0 3.4-1.4 3.4-3.4 0-1.9-1.2-3.2-3-3.2-.4 0-.7 0-1 .2.4-1.6 1.6-2.9 3.4-3.8L18.5 6Z" fill="currentColor"/></symbol>
+    <symbol id="i-drizzle" viewBox="0 0 24 24"><path d="M12 3.5c3.3 4.1 6 7.4 6 10.3a6 6 0 0 1-12 0c0-2.9 2.7-6.2 6-10.3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 13.5c.2 1.4 1.2 2.4 2.6 2.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-nut" viewBox="0 0 24 24"><path d="M12 3.5c4.7 0 8.5 3.8 8.5 8.5S16.7 20.5 12 20.5 3.5 16.7 3.5 12 7.3 3.5 12 3.5Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10c2-1.5 4-2.6 7-2.8M8.5 14.5c2.5-1 5-1.8 7.5-2M11 5l1 14" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" opacity=".7"/></symbol>
+    <symbol id="i-sprinkles" viewBox="0 0 24 24"><path d="M6 5l3 2M15 4l2 3M19 10l-2 3M5 13l3 1M10 19l2-3M16 18l3-1" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-fluff" viewBox="0 0 24 24"><path d="M7 17.5a4.2 4.2 0 0 1-.6-8.4A5.4 5.4 0 0 1 17 8.4a4.5 4.5 0 0 1 .7 9.1H7Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-icecream" viewBox="0 0 24 24"><path d="M8 11h8l-4 10-4-10Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="7.5" r="3.8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9.5 12.5h5" fill="none" stroke="currentColor" stroke-width="1.3"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.6 12h16.8M12 3.4c2.4 2.3 3.7 5.3 3.7 8.6s-1.3 6.3-3.7 8.6c-2.4-2.3-3.7-5.3-3.7-8.6S9.6 5.7 12 3.4Z" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><path d="M19 10c0 5.2-7 11-7 11S5 15.2 5 10a7 7 0 1 1 14 0Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  </svg>
+
+  <div class="bg-decor" aria-hidden="true">
+    <span class="bg-decor__glow bg-decor__glow--pink"></span>
+    <span class="bg-decor__glow bg-decor__glow--sky"></span>
+    <span class="bg-decor__glow bg-decor__glow--gold"></span>
+    <span class="bg-decor__stars" id="bgStars"></span>
+    <span class="bg-decor__grain"></span>
+  </div>
+
+  <a class="skip-link" href="#main">تخطَّ إلى المحتوى</a>
+
+  <!-- ============ Header ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header__inner">
+      <a class="brand" href="#home" aria-label="Cookie Nook">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" class="brand__cookie">
+            <path d="M55 29.4c1.4 12.5-7.8 23.6-20.4 24.4C21.9 54.6 9.8 44.4 9 31.6 8.2 18.5 18.4 7.2 31.3 6.6c4.5-.2 8.7.9 12.2 3.2-2.7 2.5-3.1 6.6-.4 9.3 2 2 5 2.5 7.5 1.3 2.2 2.6 3.8 5.6 4.4 9Z" fill="#D9A05E"/>
+            <circle cx="24" cy="23" r="4.1" fill="#5A3524"/>
+            <circle cx="39" cy="35" r="3.6" fill="#5A3524"/>
+            <circle cx="22" cy="42" r="3.9" fill="#5A3524"/>
+            <circle cx="43" cy="19" r="2.7" fill="#5A3524"/>
+            <circle cx="33" cy="47" r="2.4" fill="#5A3524"/>
+            <path d="M47 43c.5 2.4 2.1 4 4.5 4.5-2.4.5-4 2.1-4.5 4.5-.5-2.4-2.1-4-4.5-4.5 2.4-.5 4-2.1 4.5-4.5Z" fill="#FFF6E5" opacity=".9"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name" data-i18n="brand">رُكن الكوكيز</span>
+          <span class="brand__tag" data-i18n="brand.tagline">كوكيز تُخبز بحب</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="mainNav" aria-label="التنقل الرئيسي" data-i18n-aria="aria.nav">
+        <a class="nav__link is-active" href="#home" data-i18n="nav.home">الرئيسية</a>
+        <a class="nav__link" href="#about" data-i18n="nav.about">من نحن</a>
+        <a class="nav__link" href="#cookies" data-i18n="nav.cookies">قائمة الكوكيز</a>
+        <a class="nav__link" href="#best" data-i18n="nav.best">الأكثر طلبًا</a>
+        <a class="nav__link" href="#addons" data-i18n="nav.addons">الإضافات</a>
+        <a class="nav__link" href="#offers" data-i18n="nav.offers">العروض</a>
+        <a class="nav__link" href="#contact" data-i18n="nav.contact">تواصل معنا</a>
+      </nav>
+
+      <div class="header__actions">
+        <button class="mode-switch" id="modeSwitch" type="button" role="switch" aria-checked="false" aria-label="Switch to evening mode">
+          <span class="mode-switch__track" aria-hidden="true">
+            <span class="mode-switch__thumb"></span>
+            <span class="mode-switch__option mode-switch__option--sun"><svg><use href="#i-sun"/></svg></span>
+            <span class="mode-switch__option mode-switch__option--moon"><svg><use href="#i-moon"/></svg></span>
+          </span>
+          <span class="mode-switch__label" id="modeLabel">صباح</span>
+        </button>
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Switch to English">
+          <svg class="lang-btn__icon" aria-hidden="true"><use href="#i-globe"/></svg>
+          <span id="langLabel">EN</span>
+        </button>
+        <button class="cart-btn" id="cartBtn" type="button" aria-label="فتح سلة التسوق" aria-controls="cartDrawer" aria-expanded="false" data-i18n-aria="aria.cart">
+          <svg aria-hidden="true"><use href="#i-cart"/></svg>
+          <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" type="button" aria-label="فتح القائمة" aria-controls="mainNav" aria-expanded="false" data-i18n-aria="aria.menu">
+          <svg class="nav-toggle__open" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="nav-toggle__close" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ Hero ============ -->
+    <section class="hero" id="home">
+      <div class="hero__sun" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="pill hero__pill" data-reveal>
+            <span class="pill__dot"></span>
+            <span data-i18n="hero.badge">دفعات صغيرة • تُخبز طازجة كل يوم</span>
+          </span>
+          <p class="greeting" data-reveal>
+            <span class="greeting__icon" id="greetingIcon" aria-hidden="true"><svg><use href="#i-sun"/></svg></span>
+            <span class="greeting__text" id="greetingText">صباح الخير يا عاشق الكوكيز!</span>
+            <svg class="greeting__sparkle" aria-hidden="true"><use href="#i-sparkle"/></svg>
+          </p>
+          <h1 class="hero__title" data-reveal>
+            <span data-i18n="hero.title1">كوكيز صغيرة،</span>
+            <em data-i18n="hero.title2">سعادة كبيرة.</em>
+          </h1>
+          <p class="hero__lead" data-reveal data-i18n="hero.lead">
+            في رُكن الكوكيز نخبز الدفعات على مهل، بزبدة حقيقية وشوكولاتة تذوب بلطف. قطعة واحدة كافية لتحوّل يومك إلى شيء أجمل.
+          </p>
+          <div class="hero__actions" data-reveal>
+            <a class="btn btn--primary" href="#cookies">
+              <span data-i18n="hero.cta1">جهّز علبتك</span>
+              <svg class="icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="#about" data-i18n="hero.cta2">تعرّف علينا</a>
+          </div>
+          <div class="hero__trust" data-reveal>
+            <div class="avatar-stack" aria-hidden="true">
+              <span class="avatar" style="--av:#F3C4CE">ل</span>
+              <span class="avatar" style="--av:#BFDDEC">O</span>
+              <span class="avatar" style="--av:#EBCB9F">S</span>
+              <span class="avatar avatar--more">+</span>
+            </div>
+            <div class="hero__trust-copy">
+              <span class="stars" aria-hidden="true">
+                <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+              </span>
+              <p data-i18n="hero.trust">يحبها أكثر من 12,000 عاشق كوكيز</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" data-reveal data-delay="2">
+          <div class="hero__ring" aria-hidden="true"></div>
+          <div class="hero__blob">
+            <img src="assets/hero-cookies.svg" alt="طبق من الكوكيز الطازجة" data-i18n-alt="hero.imgAlt" width="1000" height="1000" fetchpriority="high" />
+          </div>
+          <div class="float-card float-card--fresh">
+            <span class="float-card__icon"><svg><use href="#i-cookie"/></svg></span>
+            <span class="float-card__body">
+              <strong data-i18n="hero.freshTitle">طازجة من الفرن</strong>
+              <span data-i18n="hero.freshText">كل صباح الساعة ٧</span>
+            </span>
+          </div>
+          <div class="float-card float-card--rating">
+            <span class="float-card__score">4.9</span>
+            <span class="float-card__body">
+              <span class="stars stars--sm" aria-hidden="true">
+                <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+              </span>
+              <span data-i18n="hero.ratingText">من 1,200 تقييم دافئ</span>
+            </span>
+          </div>
+          <span class="hero__sticker hero__sticker--heart" aria-hidden="true">
+            <svg><use href="#i-heart"/></svg>
+            <span data-i18n="hero.sticker">مخبوزة بحب</span>
+          </span>
+          <span class="hero__sticker hero__sticker--star" aria-hidden="true"><svg><use href="#i-sparkle"/></svg></span>
+          <span class="hero__sticker hero__sticker--dot" aria-hidden="true"></span>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="مرّر للأسفل" data-i18n-aria="aria.scroll">
+        <span data-i18n="hero.scroll">مرّر للتذوّق</span>
+        <span class="scroll-cue__line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============ Marquee ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span><svg><use href="#i-cookie"/></svg><b data-i18n="marquee.m1">مخبوزة بحب</b></span>
+          <span><svg><use href="#i-sparkle"/></svg><b data-i18n="marquee.m2">دفعات صغيرة وأحضان كبيرة</b></span>
+          <span><svg><use href="#i-cookie"/></svg><b data-i18n="marquee.m3">تذوب في الفم</b></span>
+          <span><svg><use href="#i-heart"/></svg><b data-i18n="marquee.m4">طازجة كل صباح</b></span>
+        </div>
+        <div class="marquee__group">
+          <span><svg><use href="#i-cookie"/></svg><b data-i18n="marquee.m1">مخبوزة بحب</b></span>
+          <span><svg><use href="#i-sparkle"/></svg><b data-i18n="marquee.m2">دفعات صغيرة وأحضان كبيرة</b></span>
+          <span><svg><use href="#i-cookie"/></svg><b data-i18n="marquee.m3">تذوب في الفم</b></span>
+          <span><svg><use href="#i-heart"/></svg><b data-i18n="marquee.m4">طازجة كل صباح</b></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ About ============ -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div class="about__media" data-reveal>
+          <div class="about__photo">
+            <img src="assets/about-bakery.svg" alt="واجهة مخبز رُكن الكوكيز" data-i18n-alt="about.imgAlt" width="1000" height="820" loading="lazy" />
+          </div>
+          <div class="about__badge">
+            <span class="about__badge-small" data-i18n="about.since">منذ</span>
+            <strong>2019</strong>
+            <svg aria-hidden="true"><use href="#i-heart"/></svg>
+          </div>
+          <div class="about__stat">
+            <strong>42,000+</strong>
+            <span data-i18n="about.statLabel">كوكيزة خرجت من فرننا</span>
+          </div>
+          <span class="about__sprig" aria-hidden="true">
+            <svg><use href="#i-leaf"/></svg>
+          </span>
+        </div>
+
+        <div class="about__content">
+          <div class="section-head section-head--start" data-reveal>
+            <span class="kicker"><svg aria-hidden="true"><use href="#i-cookie"/></svg><span data-i18n="about.kicker">حكايتنا</span></span>
+            <h2 data-i18n="about.title">مطبخ صغير… وقلب كبير جدًا.</h2>
+          </div>
+          <p class="about__text" data-reveal data-i18n="about.p1">
+            بدأت الحكاية في مطبخ عائلي صغير، بوصفة كوكيز كانت جدّتنا تخبزها في المناسبات فقط. قرّرنا أن نصنع من تلك الرائحة مكانًا: رُكن دافئ، ضوء خفيف، ورفوف تنتظر دفعة جديدة من الفرن.
+          </p>
+          <p class="about__text" data-reveal data-i18n="about.p2">
+            اليوم نخبز كل صباح بزبدة حقيقية، شوكولاتة بلجيكية، ومكوّنات نعرفها بأسمائها. لا تسريع، ولا مواد حافظة — فقط وقتٌ كافٍ، وحبٌّ كثير.
+          </p>
+          <ul class="about__points" data-reveal>
+            <li>
+              <span class="about__point-icon"><svg aria-hidden="true"><use href="#i-cookie"/></svg></span>
+              <div>
+                <h3 data-i18n="about.point1Title">دفعات صغيرة</h3>
+                <p data-i18n="about.point1Text">نخبز بكميات محدودة كل يوم، كي تصل كل قطعة في أفضل حال.</p>
+              </div>
+            </li>
+            <li>
+              <span class="about__point-icon about__point-icon--sky"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span>
+              <div>
+                <h3 data-i18n="about.point2Title">مكوّنات صادقة</h3>
+                <p data-i18n="about.point2Text">زبدة حقيقية، شوكولاتة بلجيكية، وفواكه ومكسّرات مختارة بعناية.</p>
+              </div>
+            </li>
+            <li>
+              <span class="about__point-icon about__point-icon--pink"><svg aria-hidden="true"><use href="#i-gift"/></svg></span>
+              <div>
+                <h3 data-i18n="about.point3Title">مغلّفة بحب</h3>
+                <p data-i18n="about.point3Text">كل علبة تُجهّز وتُغلّف يدويًا، مع لمسة صغيرة تُسعد يومك.</p>
+              </div>
+            </li>
+          </ul>
+          <p class="about__signature" data-reveal>
+            <span data-i18n="about.signature">بحب، نور</span>
+            <svg aria-hidden="true"><use href="#i-heart"/></svg>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Cookies menu ============ -->
+    <section class="section cookies" id="cookies">
+      <div class="container">
+        <div class="cookies__panel">
+          <div class="section-head" data-reveal>
+            <span class="kicker"><svg aria-hidden="true"><use href="#i-sparkle"/></svg><span data-i18n="cookies.kicker">قائمة الكوكيز</span></span>
+            <h2 data-i18n="cookies.title">اعثر على قطعتك المفضّلة.</h2>
+            <p data-i18n="cookies.lead">ستة أنواع، ولكل واحدة مزاجها الخاص. جرّب واحدة… أو خذ الصندوق كله.</p>
+          </div>
+
+          <div class="filters" role="group" aria-label="تصفية الكوكيز" data-i18n-aria="aria.filters" data-reveal>
+            <button class="filter is-active" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filters.all">الكل</span></button>
+            <button class="filter" type="button" data-filter="chocolate" aria-pressed="false"><span data-i18n="filters.chocolate">شوكولاتة</span></button>
+            <button class="filter" type="button" data-filter="fruity" aria-pressed="false"><span data-i18n="filters.fruity">فواكه</span></button>
+            <button class="filter" type="button" data-filter="nutty" aria-pressed="false"><span data-i18n="filters.nutty">مكسّرات</span></button>
+            <button class="filter" type="button" data-filter="classic" aria-pressed="false"><span data-i18n="filters.classic">كلاسيكية</span></button>
+          </div>
+
+          <div class="product-grid" id="productGrid"></div>
+
+          <noscript>
+            <p class="noscript-note">لعرض قائمة الكوكيز وإتمام الطلب، يرجى تفعيل JavaScript في متصفحك.<br />Please enable JavaScript to browse the cookies and place an order.</p>
+          </noscript>
+
+          <p class="cookies__note" data-reveal>
+            <svg aria-hidden="true"><use href="#i-heart"/></svg>
+            <span data-i18n="cookies.note">كل الأسعار تشمل الضريبة، وكل علبة تُغلّف يدويًا في المخبز.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Best sellers ============ -->
+    <section class="section best" id="best">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="kicker"><svg aria-hidden="true"><use href="#i-star"/></svg><span data-i18n="best.kicker">المفضّلة</span></span>
+          <h2 data-i18n="best.title">الأنواع التي يعود إليها الجميع.</h2>
+          <p data-i18n="best.lead">هذه القطع الثلاث تختفي من الرفّ أولًا… جرّبها وستعرف السبب.</p>
+        </div>
+        <div class="best-grid" id="bestGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ Add-ons ============ -->
+    <section class="section addons" id="addons">
+      <div class="container">
+        <div class="addons__head">
+          <div class="section-head section-head--start" data-reveal>
+            <span class="kicker"><svg aria-hidden="true"><use href="#i-sparkle"/></svg><span data-i18n="addons.kicker">زدها لذة</span></span>
+            <h2 data-i18n="addons.title">لمسة صغيرة فوق القطعة.</h2>
+          </div>
+          <p class="addons__lead" data-reveal data-i18n="addons.lead">اختر إضافة ترفع مزاج علبتك — أو اجمع أكثر من واحدة.</p>
+        </div>
+        <div class="addon-grid" id="addonGrid"></div>
+        <div class="addons__banner" data-reveal>
+          <span class="addons__banner-icon" aria-hidden="true"><svg><use href="#i-gift"/></svg></span>
+          <p data-i18n="addons.banner">اجمع ثلاث إضافات أو أكثر واحصل على تغليف هدية مجاني.</p>
+          <a class="btn btn--small btn--ghost" href="#cookies" data-i18n="addons.bannerCta">اختر كوكيزك</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Offers ============ -->
+    <section class="section offers" id="offers">
+      <div class="container">
+        <div class="offers__head">
+          <div class="section-head section-head--start" data-reveal>
+            <span class="kicker"><svg aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="offers.kicker">عروض دافئة</span></span>
+            <h2 data-i18n="offers.title">عروض صغيرة، سعادة كبيرة.</h2>
+            <p data-i18n="offers.lead">لأن بعض الأيام تستحق كوكيز أكثر… ولأن بعضها يستحق خصمًا أيضًا.</p>
+          </div>
+          <div class="countdown" data-reveal>
+            <span class="countdown__label" data-i18n="offers.ends">ينتهي العرض بعد</span>
+            <div class="countdown__units">
+              <span class="countdown__unit"><strong id="cdDays">00</strong><small data-i18n="offers.days">يوم</small></span>
+              <span class="countdown__colon" aria-hidden="true">:</span>
+              <span class="countdown__unit"><strong id="cdHours">00</strong><small data-i18n="offers.hours">ساعة</small></span>
+              <span class="countdown__colon" aria-hidden="true">:</span>
+              <span class="countdown__unit"><strong id="cdMinutes">00</strong><small data-i18n="offers.minutes">دقيقة</small></span>
+              <span class="countdown__colon" aria-hidden="true">:</span>
+              <span class="countdown__unit"><strong id="cdSeconds">00</strong><small data-i18n="offers.seconds">ثانية</small></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="offers__grid">
+          <article class="offer-feature" data-reveal>
+            <span class="offer-feature__blob" aria-hidden="true"></span>
+            <div class="offer-feature__content">
+              <span class="offer-feature__tag" data-i18n="offers.saveTag">وفّر 18%</span>
+              <h3 data-i18n="offers.featuredTitle">صندوق الدفء</h3>
+              <p data-i18n="offers.featuredText">١٢ كوكيزة من اختيارك + إضافتان + علبة هدية مغلّفة يدويًا.</p>
+              <div class="offer-feature__price">
+                <s>84</s>
+                <strong>69</strong>
+                <span data-i18n="currency">ر.س</span>
+              </div>
+              <div class="offer-feature__actions">
+                <a class="btn btn--cream" href="#cookies">
+                  <span data-i18n="offers.cta">اطلب الصندوق</span>
+                  <svg class="icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+                </a>
+                <button class="code-chip" type="button" data-copy="COZY15" aria-label="نسخ كود الخصم COZY15">
+                  <span class="code-chip__label" data-i18n="offers.codeLabel">كود</span>
+                  <code>COZY15</code>
+                  <svg aria-hidden="true"><use href="#i-sparkle"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="offer-feature__art" aria-hidden="true">
+              <img src="assets/hero-cookies.svg" alt="" width="1000" height="1000" loading="lazy" />
+            </div>
+            <span class="offer-feature__doodle" aria-hidden="true"><svg><use href="#i-heart"/></svg></span>
+          </article>
+
+          <div class="offers__side">
+            <article class="offer-card offer-card--sun" data-reveal data-delay="1">
+              <span class="offer-card__icon" aria-hidden="true"><svg><use href="#i-sun"/></svg></span>
+              <span class="offer-card__tag" data-i18n="offers.sunTag">كل صباح</span>
+              <h3 data-i18n="offers.sunTitle">ثنائي الصباح</h3>
+              <p data-i18n="offers.sunText">قهوة مختصة + كوكيزتان، من ٧ حتى ١١ صباحًا.</p>
+              <div class="offer-card__bottom">
+                <span class="offer-card__price"><strong>25</strong><span data-i18n="currency">ر.س</span></span>
+                <a class="round-link" href="#cookies" aria-label="اطلب ثنائي الصباح"><svg class="icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+
+            <article class="offer-card offer-card--moon" data-reveal data-delay="2">
+              <span class="offer-card__icon" aria-hidden="true"><svg><use href="#i-moon"/></svg></span>
+              <span class="offer-card__tag" data-i18n="offers.moonTag">مساء الخير</span>
+              <h3 data-i18n="offers.moonTitle">صندوق الأحلام</h3>
+              <p data-i18n="offers.moonText">٦ كوكيز + توصيل مجاني داخل الرياض.</p>
+              <div class="offer-card__bottom">
+                <span class="offer-card__price"><strong>58</strong><span data-i18n="currency">ر.س</span></span>
+                <a class="round-link" href="#cookies" aria-label="اطلب صندوق الأحلام"><svg class="icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Reviews ============ -->
+    <section class="section reviews" id="reviews">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="kicker"><svg aria-hidden="true"><use href="#i-quote"/></svg><span data-i18n="reviews.kicker">كلمات لطيفة</span></span>
+          <h2 data-i18n="reviews.title">فتات من الحب وصلتنا.</h2>
+          <p data-i18n="reviews.lead">هذه ليست تقييمات فقط، بل لحظات صغيرة صنعتها الكوكيز.</p>
+        </div>
+
+        <div class="reviews__summary" data-reveal>
+          <div class="reviews__score">
+            <strong>4.9</strong>
+            <span class="reviews__score-out">/ 5</span>
+          </div>
+          <div class="reviews__summary-copy">
+            <span class="stars" aria-hidden="true">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            </span>
+            <p><span data-i18n="reviews.rating">تقييم 4.9 من 5</span> · <span data-i18n="reviews.ratingSub">من أكثر من 1,200 تجربة سعيدة</span></p>
+          </div>
+          <span class="reviews__summary-cookie" aria-hidden="true"><svg><use href="#i-cookie"/></svg></span>
+        </div>
+
+        <div class="reviews__grid">
+          <article class="review-card" data-reveal>
+            <span class="review-card__quote" aria-hidden="true"><svg><use href="#i-quote"/></svg></span>
+            <span class="stars stars--sm" aria-hidden="true">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            </span>
+            <p data-i18n="reviews.r1">طلبت صندوق الدفء لأشاركه مع زملائي… وانتهى بي الأمر أطلب صندوقًا ثانيًا لي وحدي. كوكيز الشوكولاتة مذهل!</p>
+            <footer class="review-card__author">
+              <span class="avatar" style="--av:#F3C4CE">ل</span>
+              <span><strong data-i18n="reviews.r1Name">ليلى الحربي</strong><small data-i18n="reviews.verified">عاشق كوكيز موثّق</small></span>
+            </footer>
+          </article>
+
+          <article class="review-card" data-reveal data-delay="1">
+            <span class="review-card__quote" aria-hidden="true"><svg><use href="#i-quote"/></svg></span>
+            <span class="stars stars--sm" aria-hidden="true">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            </span>
+            <p data-i18n="reviews.r2">أجمل ما في الصباح: قهوة، وضوء خفيف، وكوكيزة كراميل من هنا. أشعر أن يومي يبدأ صح.</p>
+            <footer class="review-card__author">
+              <span class="avatar" style="--av:#BFDDEC">ع</span>
+              <span><strong data-i18n="reviews.r2Name">عمر الشمري</strong><small data-i18n="reviews.verified">عاشق كوكيز موثّق</small></span>
+            </footer>
+          </article>
+
+          <article class="review-card" data-reveal data-delay="2">
+            <span class="review-card__quote" aria-hidden="true"><svg><use href="#i-quote"/></svg></span>
+            <span class="stars stars--sm" aria-hidden="true">
+              <svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg>
+            </span>
+            <p data-i18n="reviews.r3">التغليف نفسه يبثّ السعادة. اشتريت علبة هدية لأمي ورفضت أن تشاركنا إياها… بصراحة لا ألومها.</p>
+            <footer class="review-card__author">
+              <span class="avatar" style="--av:#EBCB9F">س</span>
+              <span><strong data-i18n="reviews.r3Name">سارة العتيبي</strong><small data-i18n="reviews.verified">عاشق كوكيز موثّق</small></span>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="kicker"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-i18n="contact.kicker">قل مرحبًا</span></span>
+          <h2 data-i18n="contact.title">تعال لأجل كوكيزة… وابقَ لأجل الدفء.</h2>
+          <p data-i18n="contact.lead">نحب أن نسمع منك: سؤال، طلب خاص، أو حتى مجرد سلام.</p>
+        </div>
+
+        <div class="contact__card" data-reveal>
+          <div class="contact__info">
+            <div class="contact__intro">
+              <span class="contact__mini-kicker" data-i18n="contact.infoKicker">رُكن الكوكيز</span>
+              <h3 data-i18n="contact.infoTitle">بابنا مفتوح، والفرن دافئ.</h3>
+              <p data-i18n="contact.infoText">مرّ علينا في العليا، أو راسلنا وسنعود إليك بسرعة — غالبًا قبل أن تبرد الكوكيزة.</p>
+            </div>
+
+            <ul class="contact__list">
+              <li>
+                <span class="contact__icon" aria-hidden="true"><svg><use href="#i-location"/></svg></span>
+                <span><strong data-i18n="contact.visitTitle">زورونا</strong><span data-i18n="contact.visitText">الرياض، حي العليا، شارع الورد 12</span></span>
+              </li>
+              <li>
+                <span class="contact__icon contact__icon--sky" aria-hidden="true"><svg><use href="#i-phone"/></svg></span>
+                <span><strong data-i18n="contact.callTitle">اتصلوا بنا</strong><a href="tel:+966551234567" dir="ltr">+966 55 123 4567</a></span>
+              </li>
+              <li>
+                <span class="contact__icon contact__icon--pink" aria-hidden="true"><svg><use href="#i-clock"/></svg></span>
+                <span><strong data-i18n="contact.hoursTitle">أوقات الفرن</strong><span data-i18n="contact.hoursText">يوميًا من ٧ صباحًا حتى ١١ مساءً</span></span>
+              </li>
+              <li>
+                <span class="contact__icon contact__icon--gold" aria-hidden="true"><svg><use href="#i-mail"/></svg></span>
+                <span><strong data-i18n="contact.emailTitle">راسلونا</strong><a href="mailto:hello@cookienook.sa" dir="ltr">hello@cookienook.sa</a></span>
+              </li>
+            </ul>
+
+            <div class="contact__social">
+              <span data-i18n="contact.follow">تابعونا</span>
+              <div class="socials">
+                <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+                <a href="#" aria-label="TikTok"><svg><use href="#i-tiktok"/></svg></a>
+                <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+                <a href="#" aria-label="WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact__form" id="contactForm" novalidate>
+            <span class="contact__form-sticker" aria-hidden="true"><svg><use href="#i-cookie"/></svg></span>
+            <h3 data-i18n="contact.formTitle">أرسل لنا رسالة</h3>
+            <div class="field">
+              <label for="contactName" data-i18n="contact.name">اسمك</label>
+              <input id="contactName" name="name" type="text" autocomplete="name" required placeholder="كيف نناديك؟" data-i18n-placeholder="contact.namePlaceholder" />
+            </div>
+            <div class="field">
+              <label for="contactEmail" data-i18n="contact.email">بريدك الإلكتروني</label>
+              <input id="contactEmail" name="email" type="email" autocomplete="email" required placeholder="you@example.com" data-i18n-placeholder="contact.emailPlaceholder" dir="ltr" />
+            </div>
+            <div class="field">
+              <label for="contactMessage" data-i18n="contact.message">رسالتك</label>
+              <textarea id="contactMessage" name="message" rows="4" required placeholder="أخبرنا عن طلبك أو عن كوكيزتك المفضلة…" data-i18n-placeholder="contact.messagePlaceholder"></textarea>
+            </div>
+            <button class="btn btn--primary btn--wide" type="submit">
+              <span data-i18n="contact.send">أرسل الرسالة</span>
+              <svg aria-hidden="true"><use href="#i-mail"/></svg>
+            </button>
+            <p class="contact__form-note" data-i18n="contact.note">نرد عادةً خلال ساعتين — إلا وقت خروج الدفعة من الفرن!</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+    <!-- ============ Footer ============ -->
+    <footer class="footer" id="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a class="brand brand--footer" href="#home" aria-label="Cookie Nook">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 64 64" class="brand__cookie">
+                <path d="M55 29.4c1.4 12.5-7.8 23.6-20.4 24.4C21.9 54.6 9.8 44.4 9 31.6 8.2 18.5 18.4 7.2 31.3 6.6c4.5-.2 8.7.9 12.2 3.2-2.7 2.5-3.1 6.6-.4 9.3 2 2 5 2.5 7.5 1.3 2.2 2.6 3.8 5.6 4.4 9Z" fill="#D9A05E"/>
+                <circle cx="24" cy="23" r="4.1" fill="#4A2B1D"/>
+                <circle cx="39" cy="35" r="3.6" fill="#4A2B1D"/>
+                <circle cx="22" cy="42" r="3.9" fill="#4A2B1D"/>
+                <circle cx="43" cy="19" r="2.7" fill="#4A2B1D"/>
+              </svg>
+            </span>
+            <span class="brand__text">
+              <span class="brand__name" data-i18n="brand">رُكن الكوكيز</span>
+              <span class="brand__tag" data-i18n="brand.tagline">كوكيز تُخبز بحب</span>
+            </span>
+          </a>
+          <p class="footer__tagline" data-i18n="footer.tagline">كوكيز تُخبز بحب، لصنع لحظات صغيرة لا تُنسى.</p>
+          <div class="socials socials--footer">
+            <a href="#" aria-label="Instagram"><svg><use href="#i-instagram"/></svg></a>
+            <a href="#" aria-label="TikTok"><svg><use href="#i-tiktok"/></svg></a>
+            <a href="#" aria-label="X"><svg><use href="#i-x"/></svg></a>
+            <a href="#" aria-label="WhatsApp"><svg><use href="#i-whatsapp"/></svg></a>
+          </div>
+        </div>
+
+        <nav class="footer__col" aria-labelledby="footerShopTitle">
+          <h3 id="footerShopTitle" data-i18n="footer.shop">المتجر</h3>
+          <a href="#cookies" data-i18n="nav.cookies">قائمة الكوكيز</a>
+          <a href="#best" data-i18n="nav.best">الأكثر طلبًا</a>
+          <a href="#addons" data-i18n="nav.addons">الإضافات</a>
+          <a href="#offers" data-i18n="nav.offers">العروض</a>
+        </nav>
+
+        <nav class="footer__col" aria-labelledby="footerExploreTitle">
+          <h3 id="footerExploreTitle" data-i18n="footer.explore">اكتشف</h3>
+          <a href="#about" data-i18n="nav.about">من نحن</a>
+          <a href="#reviews" data-i18n="footer.reviews">آراء العملاء</a>
+          <a href="#contact" data-i18n="nav.contact">تواصل معنا</a>
+          <a href="mailto:hello@cookienook.sa" data-i18n="footer.gift">اطلب هدية</a>
+        </nav>
+
+        <div class="footer__news">
+          <h3 data-i18n="footer.newsletterTitle">رسائل دافئة فقط</h3>
+          <p data-i18n="footer.newsletterText">اشترك لتصلك الوصفات الجديدة والعروض أولًا. لا إزعاج، وعد.</p>
+          <form class="newsletter" id="newsletterForm" novalidate>
+            <label class="sr-only" for="newsletterEmail" data-i18n="footer.emailLabel">بريدك الإلكتروني</label>
+            <input id="newsletterEmail" name="newsletter" type="email" required placeholder="بريدك الإلكتروني" data-i18n-placeholder="footer.newsletterPlaceholder" autocomplete="email" />
+            <button type="submit" aria-label="اشترك" data-i18n-aria="footer.subscribe">
+              <svg class="icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+            </button>
+          </form>
+          <span class="footer__hint"><svg aria-hidden="true"><use href="#i-heart"/></svg><span data-i18n="footer.hint">نكتب فقط حين يكون لدينا شيء لذيذ نقوله.</span></span>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <p data-i18n="footer.rights">© 2026 رُكن الكوكيز. كل الحقوق محفوظة.</p>
+        <p class="footer__made">
+          <span data-i18n="footer.made">صُنع بالزبدة والحب</span>
+          <svg aria-hidden="true"><use href="#i-heart"/></svg>
+        </p>
+      </div>
+      <div class="footer__scallop" aria-hidden="true"></div>
+    </footer>
+
+  <!-- ============ Cart drawer ============ -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <header class="cart-drawer__head">
+      <div>
+        <span class="cart-drawer__kicker" data-i18n="cart.kicker">علبتك الدافئة</span>
+        <h2 id="cartTitle" data-i18n="cart.title">سلّة الكوكيز</h2>
+      </div>
+      <button class="icon-btn" id="cartClose" type="button" aria-label="إغلاق السلة" data-i18n-aria="aria.closeCart">
+        <svg aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </header>
+    <div class="cart-drawer__body">
+      <div class="cart-empty" id="cartEmpty">
+        <span class="cart-empty__art" aria-hidden="true"><svg><use href="#i-cookie"/></svg></span>
+        <h3 data-i18n="cart.emptyTitle">سلّتك فارغة… حاليًا.</h3>
+        <p data-i18n="cart.emptyText">املأها بالدفء: اختر كوكيزتك المفضلة وسنخبزها لك.</p>
+        <button class="btn btn--primary btn--small" id="cartBrowse" type="button" data-i18n="cart.browse">تصفّح الكوكيز</button>
+      </div>
+      <ul class="cart-list" id="cartList"></ul>
+    </div>
+    <footer class="cart-drawer__foot" id="cartFoot" hidden>
+      <div class="delivery">
+        <div class="delivery__row">
+          <svg aria-hidden="true"><use href="#i-truck"/></svg>
+          <span id="deliveryText">أضف 100 ر.س للحصول على توصيل مجاني</span>
+        </div>
+        <div class="delivery__bar"><span id="deliveryFill"></span></div>
+      </div>
+      <div class="cart-total">
+        <span data-i18n="cart.subtotal">المجموع الفرعي</span>
+        <strong id="cartSubtotal">0</strong>
+      </div>
+      <p class="cart-drawer__note" data-i18n="cart.note">الدفع عند الاستلام أو بالبطاقة — كلها خيارات لطيفة.</p>
+      <button class="btn btn--primary btn--wide" id="checkoutBtn" type="button">
+        <span data-i18n="cart.checkout">إتمام الطلب</span>
+        <svg class="icon-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </button>
+    </footer>
+  </aside>
+
+  <!-- ============ Success modal ============ -->
+  <div class="modal-overlay" id="successOverlay"></div>
+  <div class="success-modal" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-hidden="true">
+    <button class="icon-btn success-modal__close" id="successClose" type="button" aria-label="إغلاق" data-i18n-aria="aria.close">
+      <svg aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+    <div class="success-modal__art" aria-hidden="true">
+      <span class="success-modal__ring"></span>
+      <svg><use href="#i-cookie"/></svg>
+      <i class="success-modal__spark success-modal__spark--1"></i>
+      <i class="success-modal__spark success-modal__spark--2"></i>
+      <i class="success-modal__spark success-modal__spark--3"></i>
+    </div>
+    <h2 id="successTitle" data-i18n="success.title">وصل طلبك إلى الفرن!</h2>
+    <p data-i18n="success.text">شكرًا يا عاشق الكوكيز. سنبدأ بخبز طلبك قريبًا ونتواصل معك لتأكيد التوصيل.</p>
+    <div class="success-modal__order">
+      <span data-i18n="success.order">رقم الطلب</span>
+      <strong id="orderNumber" dir="ltr">#CN-2048</strong>
+    </div>
+    <button class="btn btn--primary" id="successDone" type="button" data-i18n="success.close">العودة للتذوّق</button>
+  </div>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
+
